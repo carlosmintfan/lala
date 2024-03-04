@@ -8,7 +8,7 @@ class Lala(discord.Client):
         print("Started!!!")
         self.bads = ["spam", "scam", "böse", "pong", "ping", "gewinnspiel", "gratis", "glücksspiel"]
         self.timeouts = {"karl.akemsoft.com": 1, "tyranni": 2, "schädlich": 2, "gezielt zu unterdrücken": 2}
-        self.usersend= await client.fetch_user("#")
+        self.usersend= await client.fetch_user("1060542604573425724")
 
     async def on_message(self, message):
         # don't respond to ourselves
@@ -33,4 +33,5 @@ class Lala(discord.Client):
 intents = discord.Intents.default()
 intents.message_content = True
 client = Lala(intents=intents)
-client.run('#')
+token = open("token.txt", "r").read()
+client.run(token)
